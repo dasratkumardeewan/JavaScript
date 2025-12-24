@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter with increase, decrease, reset</title>
+  </head>
+  <body>
+    <div>0</div>
+    <button id="increase">increase It</button>
+    <button id="decrease">Decrease It</button>
+    <button id="resetVal">Reset</button>
+    <script>
+      let btnOfIn = document.querySelector("#increase");
+      let btnOfDe = document.querySelector("#decrease");
+      let resetVal = document.querySelector("#resetVal");
+      let digits = document.querySelector("div");
+      let digitsVal = Number(digits.textContent);
+
+      btnOfIn.addEventListener("click", increment);
+
+      function increment() {
+        digitsVal += 1;
+        digits.textContent = digitsVal;
+      }
+
+      btnOfDe.addEventListener("click", decrease);
+      function decrease() {
+        digitsVal -= 1;
+        digits.textContent = digitsVal;
+      }
+
+      resetVal.addEventListener("click", reset);
+      function reset() {
+        digitsVal = 0;
+        digits.textContent = digitsVal;
+      }
+    </script>
+  </body>
+</html>
