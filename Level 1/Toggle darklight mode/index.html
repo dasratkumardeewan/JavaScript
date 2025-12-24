@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle darklight mode & And Hide Text When Btn Is Clicked</title>
+    <style>
+      .hideIt {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Hello</div>
+    <button>Toggle & Hide The Text</button>
+    <script>
+      let btn = document.querySelector("button");
+      let isWhite = true;
+      btn.addEventListener("click", () => {
+        let div = document.querySelector("div");
+        let body = document.querySelector("body");
+        if (isWhite) {
+          div.classList.add("hideIt");
+          body.style.backgroundColor = "black";
+          isWhite = false;
+        } else {
+          div.classList.remove("hideIt");
+
+          body.style.backgroundColor = "white";
+          isWhite = true;
+        }
+      });
+    </script>
+  </body>
+</html>
